@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { ProductModel } = require("../models/Product.model");
+const { ProductModel } = require("../models/product.model");
 const {productAuth} = require("../middleware/productauth.middleware");
 
 
