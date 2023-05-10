@@ -19,7 +19,7 @@ addressRouter.post("/add",async(req,res)=>{
     try {
         let data = new AddressModel(req.body);
         await data.save();
-        res.status(200).send({"msg":"data added successfully","data":data});
+        res.status(200).send({"msg":"address added successfully","data":data});
     } catch (error) {
         res.status(400).send({"msg":error.message});
     }
