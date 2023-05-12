@@ -49,6 +49,11 @@ const orderSchema = mongoose.Schema({
     address:{
         type:String,
         required:true
+    },
+    Date:{
+        type:Date,
+        default:Date.now(),
+        required:true
     }
 })
 
