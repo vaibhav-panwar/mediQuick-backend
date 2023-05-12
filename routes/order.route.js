@@ -1,9 +1,9 @@
 const { Router } = require("express");
 const { OrderModel } = require("../models/order.model");
-const { ordertAuth } = require("../middleware/orderauth.middleware");
+const {auth} = require("../middleware/auth.middleware");
 
 const orderRouter = Router();
-orderRouter.use(ordertAuth);
+orderRouter.use(auth);
 
 orderRouter.get("/", async (req, res) => {
     let { userID } = req.body;
