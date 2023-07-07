@@ -13,6 +13,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.all("*", (req, res) => {
+    res.status(404).send({
+        "error": `404 ! Invalid URL Detected.`
+    })
+})
+
 app.use("/user",userRouter);
 app.use("/product",productRouter);
 app.use("/order",orderRouter);
