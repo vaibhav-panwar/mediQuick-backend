@@ -13,11 +13,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.all("*", (req, res) => {
-    res.status(404).send({
-        "error": `404 ! Invalid URL Detected.`
-    })
-})
+
 
 app.use("/user",userRouter);
 app.use("/product",productRouter);
@@ -25,6 +21,12 @@ app.use("/order",orderRouter);
 app.use("/comment",commentRouter);
 app.use("/cart",cartRouter);
 app.use("/address",addressRouter);
+
+app.all("*", (req, res) => {
+    res.status(404).send({
+        "error": `404 ! Invalid URL Detected.`
+    })
+})
 
 app.listen(process.env.port,async()=>{
     await connection
